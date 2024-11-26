@@ -13,7 +13,7 @@
         {
             "type": "chrome",
             "request": "attach",
-            "name": "Attach"
+         "name": "Attach"
         },
 
         {
