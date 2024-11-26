@@ -1,0 +1,41 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Frontend",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}/frontend",
+            "sourceMapPathOverrides": {
+                "webpack:///src/*": "${webRoot}/*"
+            }
+        },
+        {
+            "type": "chrome",
+            "request": "attach",
+            "name": "Attach"
+        },
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Backend",
+            "program": "${workspaceFolder}/backend/${input:backendFile}",
+            "args": [
+                "--serve"
+            ]
+        }
+    ],
+    "inputs": [
+        {
+            "type": "promptString",
+            "id": "frontendFile",
+            "description": "Path to your frontend entry file"
+        },
+        {
+            "type": "promptString",
+            "id": "backendFile",
+            "description": "Path to your backend entry file"
+        }
+    ]
+}
